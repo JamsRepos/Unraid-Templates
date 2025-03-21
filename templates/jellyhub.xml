@@ -21,6 +21,6 @@
         Please ensure you have a Postgres database running before starting this container.  &#xD;
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
-    <Config Name="JWT Secret" Target="JWT_SECRET" Default="your-very-long-and-mysterious-secret" Mode="" Description="Change this to a random secure string." Type="Variable" Display="always" Required="true" Mask="true">your-very-long-and-mysterious-secret</Config>
-    <Config Name="Postgres Connection String" Target="DATABASE_URL" Default="postgresql://jellyhub:jellyhub@localhost:5432/jellyhub?schema=prisma" Mode="" Description="Change this to your Postgres connection string." Type="Variable" Display="always" Required="true" Mask="true">postgresql://jellyhub:jellyhub@localhost:5432/jellyhub?schema=prisma</Config>
+    <Config Name="JWT Secret" Target="JWT_SECRET" Default="your-very-long-and-mysterious-secret" Mode="" Description="Change this to a random secure string." Type="Variable" Display="always" Required="true">your-very-long-and-mysterious-secret</Config>
+    <Config Name="Postgres Connection String" Target="DATABASE_URL" Default="postgresql://jellyhub:jellyhub@localhost:5432/jellyhub?schema=prisma" Mode="" Description="Change this to your Postgres connection string." Type="Variable" Display="always" Required="true">postgresql://jellyhub:jellyhub@localhost:5432/jellyhub?schema=prisma</Config>
 </Container>
