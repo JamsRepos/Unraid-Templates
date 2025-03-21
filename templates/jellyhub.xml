@@ -16,9 +16,7 @@
     <Maintainer>
         <WebPage>https://github.com/JamsRepos</WebPage>
     </Maintainer>
-    <Requires>
-        This container requires a Postgres database to function.  &#xD;
-        Please ensure you have a Postgres database running before starting this container.  &#xD;
+    <Requires>This container requires a Postgres database to function.&#xD;Please ensure you have a Postgres database running before starting this container.&#xD;The default credentials for the application are 'admin' with password 'adminadmin'.
     </Requires>
     <Config Name="Web UI Port" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
     <Config Name="JWT Secret" Target="JWT_SECRET" Default="your-very-long-and-mysterious-secret" Mode="" Description="Change this to a random secure string." Type="Variable" Display="always" Required="true">your-very-long-and-mysterious-secret</Config>
