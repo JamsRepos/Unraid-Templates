@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>capture</Name>
+    <Repository>ghcr.io/bluewave-labs/capture:latest</Repository>
+    <Registry>https://github.com/bluewave-labs/capture/pkgs/container/capture</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/bluewave-labs/capture/issues</Support>
+    <Project>https://github.com/bluewave-labs/capture</Project>
+    <Overview>Capture - An open source hardware monitoring agent for Checkmate.</Overview>
+    <Category>Tools: Network:Management Status:Stable</Category>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/capture.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/capture.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Requires>You will need to configure the Checkmate web panel along-side this container. This is a reporting agent only.</Requires>
+    <Config Name="Listen Port" Target="59232" Default="" Mode="tcp" Description="The port where the API endpoint will live." Type="Port" Display="always" Required="false" Mask="false">59232</Config>
+    <Config Name="API Secret" Target="API_SECRET" Default="REPLACE_WITH_YOUR_SECRET" Mode="" Description="The authorization secret used to validate the connection to Checkmate." Type="Variable" Display="always" Required="false" Mask="true">REPLACE_WITH_YOUR_SECRET</Config>
+</Container>
