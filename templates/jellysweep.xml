@@ -16,8 +16,10 @@
     <Maintainer>
         <WebPage>https://github.com/JamsRepos</WebPage>
     </Maintainer>
+    <Requires>Please ensure you create the configuration file https://github.com/jon4hz/jellysweep?tab=readme-ov-file#configuration-file before starting the container.</Requires>
     <Config Name="Web UI Port" Target="3002" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3002</Config>
     <Config Name="Data Path" Target="/app/data" Default="" Mode="rw" Description="Specify the path to the data directory." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/jellysweep</Config>
+    <Config Name="Config Path" Target="/app/config.yml" Default="" Mode="ro" Description="Specify the path to the config file." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/jellysweep/config.yml</Config>
     <Config Name="Dry Run" Target="JELLYSWEEP_DRY_RUN" Default="false" Mode="" Description="Enable dry run mode." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
     <Config Name="Listen Address" Target="JELLYSWEEP_LISTEN" Default="0.0.0.0:3002" Mode="" Description="Specify the address and port to listen on." Type="Variable" Display="always" Required="true" Mask="false">0.0.0.0:3002</Config>
 </Container>
