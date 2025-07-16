@@ -17,6 +17,7 @@
         <WebPage>https://github.com/JamsRepos</WebPage>
     </Maintainer>
     <Config Name="Web UI Port" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Data Path" Target="/app/data" Default="" Mode="rw" Description="Specify the path to the data directory." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/github-release-monitor</Config>
     <Config Name="Auth Secret" Target="AUTH_SECRET" Default="" Mode="" Description="A long, random string (at least 32 characters) used to encrypt session cookies.&#13;&#10;You can generate one using: openssl rand -base64 32" Type="Variable" Display="always" Required="true" Mask="true"/>
     <Config Name="Admin Username" Target="AUTH_USERNAME" Default="" Mode="" Description="The username for logging into the application." Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Admin Password" Target="AUTH_PASSWORD" Default="" Mode="" Description="The password for logging into the application." Type="Variable" Display="always" Required="true" Mask="true"/>
