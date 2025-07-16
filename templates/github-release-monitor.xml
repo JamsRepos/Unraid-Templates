@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>GitHub-Release-Monitor</Name>
+    <Repository>ghcr.io/iamspido/github-release-monitor:latest</Repository>
+    <Registry>https://github.com/iamspido/github-release-monitor/pkgs/container/github-release-monitor</Registry>
+    <Network>host</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/iamspido/github-release-monitor/issues</Support>
+    <Project>https://github.com/iamspido/github-release-monitor</Project>
+    <Overview>A powerful, self-hostable application to automatically monitor GitHub repository releases and receive instant email notifications. Keep track of your favorite projects without manually checking for updates.</Overview>
+    <Category>HomeAutomation: Tools: Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/github-release-monitor.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/github-release-monitor.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Config Name="Web UI Port" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Auth Secret" Target="AUTH_SECRET" Default="" Mode="" Description="A long, random string (at least 32 characters) used to encrypt session cookies.&#13;&#10;You can generate one using: openssl rand -base64 32" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Admin Username" Target="AUTH_USERNAME" Default="" Mode="" Description="The username for logging into the application." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Admin Password" Target="AUTH_PASSWORD" Default="" Mode="" Description="The password for logging into the application." Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="GitHub Access Token" Target="GITHUB_ACCESS_TOKEN" Default="" Mode="" Description="A GitHub Personal Access Token to increase the API rate limit. A token with no scopes is sufficient." Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Timezone" Target="TZ" Default="" Mode="" Description="The timezone for the container (e.g., Europe/London). Affects log timestamps and date formatting." Type="Variable" Display="always" Required="false" Mask="false">Europe/London</Config>
+    <Config Name="Mail Port" Target="MAIL_PORT" Default="" Mode="" Description="The port for your SMTP server (e.g., 587 or 465)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Mail Username" Target="MAIL_USERNAME" Default="" Mode="" Description="The username for SMTP authentication." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Mail Password" Target="MAIL_PASSWORD" Default="" Mode="" Description="The password or app token for SMTP authentication." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+    <Config Name="Mail From Address" Target="MAIL_FROM_ADDRESS" Default="" Mode="" Description="The email address that notifications will be sent from." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Mail From Name" Target="MAIL_FROM_NAME" Default="" Mode="" Description="The display name for the " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Mail To Address" Target="MAIL_TO_ADDRESS" Default="" Mode="" Description="The email address that will receive the notifications." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config Name="Mail Host" Target="MAIL_HOST" Default="" Mode="" Description="The hostname or IP address of your SMTP server." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
