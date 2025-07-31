@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>CheckCle-Monitoring-Agent</Name>
+    <Repository>operacle/checkcle-server-agent:latest</Repository>
+    <Registry>https://hub.docker.com/r/operacle/checkcle-server-agent/</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/operacle/checkcle-server-agent/issues</Support>
+    <Project>https://github.com/operacle/checkcle-server-agent</Project>
+    <Overview>A monitoring agent for CheckCle that collects system metrics, Docker stats, and sends data to your CheckCle server for monitoring and alerting.</Overview>
+    <Category>Tools: Network:Management Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:8081]</WebUI>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/checkcle-monitoring-agent.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/checkcle-monitoring-agent.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Requires>You will need to configure your CheckCle server URL and obtain an agent ID and server token from your CheckCle dashboard.</Requires>
+    <Config Name="Web UI Port" Target="8081" Default="" Mode="tcp" Description="Port for the monitoring agent web interface" Type="Port" Display="always" Required="true" Mask="false">8081</Config>
+    <Config Name="Agent ID" Target="AGENT_ID" Default="" Mode="" Description="Unique identifier for this monitoring agent (obtained from CheckCle dashboard)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Server Name" Target="SERVER_NAME" Default="" Mode="" Description="Optional name for this server (leave empty for auto-detection)" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Server Token" Target="SERVER_TOKEN" Default="" Mode="" Description="Authentication token for connecting to CheckCle server" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="CheckCle URL" Target="CHECKCLE_URL" Default="" Mode="" Description="URL of your CheckCle server (e.g., https://checkcle.example.com)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="CheckCle Enabled" Target="CHECKCLE_ENABLED" Default="true" Mode="" Description="Enable CheckCle integration" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+    <Config Name="Monitoring Data" Target="/var/lib/monitoring-agent" Default="" Mode="rw" Description="Path for storing monitoring agent data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/checkcle-monitoring-agent/data/</Config>
+    <Config Name="Monitoring Logs" Target="/var/log/monitoring-agent" Default="" Mode="rw" Description="Path for storing monitoring agent logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/checkcle-monitoring-agent/logs/</Config>
+    <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="" Mode="ro" Description="Docker socket for container monitoring" Type="Path" Display="advanced" Required="false" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="Host Proc" Target="/host/proc" Default="" Mode="ro" Description="Host proc filesystem for system monitoring" Type="Path" Display="advanced" Required="false" Mask="false">/proc</Config>
+    <Config Name="Host Etc" Target="/host/etc" Default="" Mode="ro" Description="Host etc directory for system configuration" Type="Path" Display="advanced" Required="false" Mask="false">/etc</Config>
+    <Config Name="Host Sys" Target="/host/sys" Default="" Mode="ro" Description="Host sys filesystem for system monitoring" Type="Path" Display="advanced" Required="false" Mask="false">/sys</Config>
+    <Config Name="Host Root" Target="/host/root" Default="" Mode="ro" Description="Host root filesystem for system monitoring" Type="Path" Display="advanced" Required="false" Mask="false">/</Config>
+    <Config Name="Host Var Run" Target="/host/var/run" Default="" Mode="ro" Description="Host var/run directory for system monitoring" Type="Path" Display="advanced" Required="false" Mask="false">/var/run</Config>
+    <Config Name="Host Dev" Target="/host/dev" Default="" Mode="ro" Description="Host dev directory for system monitoring" Type="Path" Display="advanced" Required="false" Mask="false">/dev</Config>
+</Container>
