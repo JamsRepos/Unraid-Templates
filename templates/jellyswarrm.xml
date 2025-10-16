@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Jellyswarrm</Name>
+    <Repository>ghcr.io/llukas22/jellyswarrm:latest</Repository>
+    <Registry>https://github.com/llukas22/jellyswarrm/pkgs/container/jellyswarrm</Registry>
+    <Network>host</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/llukas22/jellyswarrm/issues</Support>
+    <Project>https://github.com/llukas22/jellyswarrm</Project>
+    <Overview>Combine all your Jellyfin Servers into one.</Overview>
+    <Category>Downloaders: MediaApp:Video</Category>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/jellyswarrm.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/jellyswarrm.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Config Name="Web UI Port" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Data Path" Target="/app/data" Default="" Mode="rw" Description="Specify the path to the data directory." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/jellyswarrm</Config>
+    <Config Name="Jellyswarrm Username" Target="JELLYSWARRM_USERNAME" Default="" Mode="" Description="The username for the Jellyswarrm server." Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Jellyswarrm Password" Target="JELLYSWARRM_PASSWORD" Default="" Mode="" Description="The password for the Jellyswarrm server." Type="Variable" Display="always" Required="true" Mask="true"/>
+</Container>
