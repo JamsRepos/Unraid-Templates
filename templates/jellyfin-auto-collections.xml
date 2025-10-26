@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Jellyfin Auto Collections</Name>
+    <Repository>ghcr.io/ghomashudson/jellyfin-auto-collections:latest</Repository>
+    <Registry>https://github.com/ghomasHudson/Jellyfin-Auto-Collections/pkgs/container/jellyfin-auto-collections</Registry>
+    <Network>host</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/ghomasHudson/Jellyfin-Auto-Collections/issues</Support>
+    <Project>https://github.com/ghomasHudson/Jellyfin-Auto-Collections</Project>
+    <Overview>Automatically create and manage collections in Jellyfin based on configurable rules. Runs on a schedule to keep your collections up to date.</Overview>
+    <Category>Downloaders: MediaApp:Video</Category>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/jellyfin-auto-collections.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/jellyfin-auto-collections.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Requires>Before starting, download the example config file from the GitHub repository and place it in the config path you specify.&#xD;You will need to obtain a Jellyfin API key from your Jellyfin server dashboard (Dashboard &gt; API Keys).&#xD;The application runs on a schedule to update collections automatically.</Requires>
+    <Config Name="Crontab Schedule" Target="CRONTAB" Default="0 0 * * *" Mode="" Description="Cron expression for scheduling collection updates (default: daily at midnight)" Type="Variable" Display="always" Required="false" Mask="false">0 0 * * *</Config>
+    <Config Name="Timezone" Target="TZ" Default="Europe/London" Mode="" Description="Timezone for the container" Type="Variable" Display="always" Required="false" Mask="false">Europe/London</Config>
+    <Config Name="Jellyfin Server URL" Target="JELLYFIN_SERVER_URL" Default="" Mode="" Description="URL of your Jellyfin server (e.g., https://jellyfin.example.com or http://localhost:8096)" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Jellyfin API Key" Target="JELLYFIN_API_KEY" Default="" Mode="" Description="API key from your Jellyfin server (Dashboard &gt; API Keys)" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="Jellyfin User ID" Target="JELLYFIN_USER_ID" Default="" Mode="" Description="ID of the Jellyfin user account to use" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Config Path" Target="/app/config" Default="" Mode="rw" Description="Path where config.yaml file will be stored" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/jellyfin-auto-collections</Config>
+</Container>
