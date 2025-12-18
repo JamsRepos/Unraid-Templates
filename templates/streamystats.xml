@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Streamystats - AIO</Name>
+    <Repository>fredrikburmester/streamystats-v2-aio:latest</Repository>
+    <Registry>https://github.com/fredrikburmester/streamystats</Registry>
+    <Network>host</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/fredrikburmester/streamystats/issues</Support>
+    <Project>https://github.com/fredrikburmester/streamystats</Project>
+    <Overview>Streamystats is a statistics service for Jellyfin, providing analytics and data visualization. This is the All-In-One version, which includes all the dependencies of the standalone version, as well as the web UI.</Overview>
+    <Category>MediaApp:Video MediaServer:Video Other: Tools: Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/streamystats.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/streamystats.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Config Name="Web UI Port" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Database Path" Target="/var/lib/postgresql/data" Default="" Mode="rw" Description="Specify the path to the database directory." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/streamystats</Config>
+    <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Mode="" Description="Generate a random secret using: openssl rand -base64 32" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="PostgreSQL Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Generate a random password using: openssl rand -base64 32" Type="Variable" Display="always" Required="true" Mask="true"/>
+</Container>
