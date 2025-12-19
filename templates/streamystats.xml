@@ -19,5 +19,5 @@
     <Config Name="Web UI Port" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
     <Config Name="Database Path" Target="/var/lib/postgresql/data" Default="" Mode="rw" Description="Specify the path to the database directory." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/streamystats</Config>
     <Config Name="Session Secret" Target="SESSION_SECRET" Default="" Mode="" Description="Generate a random secret using: openssl rand -base64 32" Type="Variable" Display="always" Required="true" Mask="true"/>
-    <Config Name="PostgreSQL Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Generate a random password using: openssl rand -base64 32" Type="Variable" Display="always" Required="true" Mask="true"/>
+    <Config Name="PostgreSQL Password" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Generate a secure password for the PostgreSQL database." Type="Variable" Display="always" Required="true" Mask="true"/>
 </Container>
