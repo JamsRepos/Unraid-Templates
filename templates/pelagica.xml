@@ -16,13 +16,6 @@
     <Maintainer>
         <WebPage>https://github.com/JamsRepos</WebPage>
     </Maintainer>
-    <Requires>
-        Before starting, download the default config files from the GitHub repository and place them in the paths specified in the configuration.&#xD;
-        Download config.json from: https://raw.githubusercontent.com/KartoffelChipss/pelagica/main/config.json&#xD;
-        Download config.schema.json from: https://raw.githubusercontent.com/KartoffelChipss/pelagica/main/config.schema.json&#xD;
-        The config.json file controls the app's behavior and can be edited to set your default Jellyfin server address. Changes take effect immediately without restarting the container.
-    </Requires>
     <Config Name="Web UI Port" Target="80" Default="8080" Mode="tcp" Description="The port for accessing the Pelagica web interface." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-    <Config Name="Config JSON" Target="/usr/share/nginx/html/config.json" Default="" Mode="rw" Description="Path to the config.json file. Download the default from: https://raw.githubusercontent.com/KartoffelChipss/pelagica/main/config.json" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/pelagica/config.json</Config>
-    <Config Name="Config Schema JSON" Target="/usr/share/nginx/html/config.schema.json" Default="" Mode="rw" Description="Path to the config.schema.json file. Download the default from: https://raw.githubusercontent.com/KartoffelChipss/pelagica/main/config.schema.json" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/pelagica/config.schema.json</Config>
+    <Config Name="Config Folder" Target="/config" Default="" Mode="rw" Description="Path to the config folder." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/pelagica</Config>
 </Container>
