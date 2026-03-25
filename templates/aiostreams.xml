@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AIOStreams</Name>
+    <Repository>ghcr.io/viren070/aiostreams:latest</Repository>
+    <Registry>https://github.com/Viren070/AIOStreams/pkgs/container/aiostreams</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/Viren070/AIOStreams/issues</Support>
+    <Project>https://github.com/Viren070/AIOStreams</Project>
+    <Overview>AIOStreams is a Stremio addon that combines and configures multiple stream sources, filters, and debrid options in one configurable installation. See the project documentation for Stremio setup and built-in addon notes.</Overview>
+    <Category>MediaApp:Video Tools: Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:3000]</WebUI>
+    <Icon>https://github.com/Viren070/AIOStreams/blob/main/branding/PNG/Logo-Gradient.png?raw=true</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/aiostreams.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Requires>
+        Before first run: set BASE_URL to the public URL clients use to reach this instance (HTTPS via reverse proxy is typical). &#xD;
+        Generate SECRET_KEY with: openssl rand -hex 32 (64 hex characters). &#xD;
+        Optional: set ADDON_PASSWORD to protect the addon; leave blank to disable. &#xD;
+        For all other environment variables, add them under &quot;Add another Path, Port, Variable, Label or Device&quot; or see the upstream sample: https://raw.githubusercontent.com/Viren070/AIOStreams/main/.env.sample &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="Host port mapped to the container web UI (container listens on 3000 by default)." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+    <Config Name="Data Folder" Target="/app/data" Default="" Mode="rw" Description="Persistent data directory (SQLite database and application data). Maps to ./data in the upstream compose example." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/aiostreams</Config>
+    <Config Name="Base URL" Target="BASE_URL" Default="" Mode="" Description="Public base URL of this instance (required). Used for install links, stream URLs, and built-in addons. Example: https://aiostreams.yourdomain.com — avoid a trailing slash." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Secret Key" Target="SECRET_KEY" Default="" Mode="" Description="64-character hex string for encrypting addon configuration. Generate with: openssl rand -hex 32" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+    <Config Name="Database URI" Target="DATABASE_URI" Default="sqlite://./data/db.sqlite" Mode="" Description="Database connection string. Default SQLite path matches the Data Folder mount." Type="Variable" Display="always" Required="true" Mask="false">sqlite://./data/db.sqlite</Config>
+    <Config Name="Addon Name" Target="ADDON_NAME" Default="AIOStreams" Mode="" Description="Display name for this addon instance." Type="Variable" Display="always" Required="true" Mask="false">AIOStreams</Config>
+    <Config Name="Addon ID" Target="ADDON_ID" Default="aiostreams.viren070.com" Mode="" Description="Unique identifier for this addon instance; change if you run a distinct public instance." Type="Variable" Display="always" Required="true" Mask="false">aiostreams.viren070.com</Config>
+    <Config Name="Addon Password" Target="ADDON_PASSWORD" Default="" Mode="" Description="Optional API/install password. Leave empty to disable. Multiple values allowed, comma-separated." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+    <Config Name="Internal URL" Target="INTERNAL_URL" Default="" Mode="" Description="Optional override for how the server reaches itself (e.g. behind reverse proxy). Usually leave blank." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+    <Config Name="Redis URI" Target="REDIS_URI" Default="" Mode="" Description="Optional Redis URL for caching in scaled deployments. Leave blank for single-container setups." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+</Container>
