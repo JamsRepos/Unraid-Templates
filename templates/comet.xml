@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Comet</Name>
+    <Repository>g0ldyy/comet:latest</Repository>
+    <Registry>https://hub.docker.com/r/g0ldyy/comet</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/g0ldyy/comet/issues</Support>
+    <Project>https://github.com/g0ldyy/comet</Project>
+    <Overview>Comet is a self-hosted service for torrent/debrid search with configurable environment variables and support for SQLite or PostgreSQL backends.</Overview>
+    <Category>Tools: Network:Management Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:8000]</WebUI>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/comet.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/comet.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Requires>
+        Default setup uses SQLite (single-container friendly). &#xD;
+        SQLite database file path defaults to `/app/data/comet.db` in the mapped Data Folder. &#xD;
+        To use PostgreSQL instead, change DATABASE_TYPE to `postgresql` and set DATABASE_URL for your database host/user/password/database. &#xD;
+        If you use an external .env for additional Comet options, add those variables in Unraid under &quot;Add another Path, Port, Variable, Label or Device&quot;. &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Host port mapped to the Comet web service (container listens on 8000)." Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+    <Config Name="Data Folder" Target="/app/data" Default="" Mode="rw" Description="Persistent data directory for Comet application data." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/comet</Config>
+    <Config Name="Database Type" Target="DATABASE_TYPE" Default="sqlite" Mode="" Description="Database backend type (`sqlite` or `postgresql`)." Type="Variable" Display="always" Required="true" Mask="false">sqlite</Config>
+    <Config Name="Database URL" Target="DATABASE_URL" Default="/app/data/comet.db" Mode="" Description="Database target. For SQLite, use a file path in the Data Folder. For PostgreSQL, use host:port/database credentials format." Type="Variable" Display="always" Required="true" Mask="false">/app/data/comet.db</Config>
+</Container>
