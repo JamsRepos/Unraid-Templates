@@ -11,7 +11,7 @@
     <Overview>AIOStreams is a Stremio addon that combines and configures multiple stream sources, filters, and debrid options in one configurable installation. See the project documentation for Stremio setup and built-in addon notes.</Overview>
     <Category>MediaApp:Video Tools: Status:Stable</Category>
     <WebUI>http://[IP]:[PORT:3000]</WebUI>
-    <Icon>https://github.com/Viren070/AIOStreams/blob/main/branding/PNG/Logo-Gradient.png?raw=true</Icon>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/aiostreams.png</Icon>
     <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/aiostreams.xml</TemplateURL>
     <Maintainer>
         <WebPage>https://github.com/JamsRepos</WebPage>
