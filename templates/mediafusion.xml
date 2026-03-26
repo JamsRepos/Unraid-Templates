@@ -33,6 +33,6 @@
     <Config Name="Scrapling CDP URL" Target="SCRAPLING_CDP_URL" Default="ws://browserless:3000" Mode="" Description="Browserless websocket endpoint for scraping tasks." Type="Variable" Display="advanced" Required="false" Mask="false">ws://browserless:3000</Config>
     <Config Name="Single Worker Mode" Target="TASKIQ_SINGLE_WORKER_MODE" Default="true" Mode="" Description="Use one consolidated queue worker mode (default upstream compose behavior)." Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
     <Config Name="Secret Key" Target="SECRET_KEY" Default="" Mode="" Description="Required security key. Generate with: openssl rand -hex 16" Type="Variable" Display="always" Required="true" Mask="true"></Config>
-    <Config Name="API Password" Target="API_PASSWORD" Default="" Mode="" Description="Optional API password to secure endpoints. Strongly recommended for public instances." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+    <Config Name="API Password" Target="API_PASSWORD" Default="" Mode="" Description="API password required by the app for securing endpoints." Type="Variable" Display="always" Required="true" Mask="true"></Config>
     <Config Name="Read Replica URI" Target="POSTGRES_READ_URI" Default="" Mode="" Description="Optional PostgreSQL read-replica connection string for HA deployments." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
 </Container>
