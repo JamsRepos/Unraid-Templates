@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>AIOMetadata</Name>
+    <Repository>ghcr.io/cedya77/aiometadata:latest</Repository>
+    <Registry>https://github.com/cedya77/aiometadata/pkgs/container/aiometadata</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/cedya77/aiometadata/issues</Support>
+    <Project>https://github.com/cedya77/aiometadata</Project>
+    <Overview>AIOMetadata is a Stremio metadata addon. Redis is required for caching; SQLite (default) or PostgreSQL for storage. Most options (API keys, providers, catalogs, passwords) are set in the /configure web UI and stored in the database—not as container variables.</Overview>
+    <Category>MediaApp:Video Tools: Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:3232]</WebUI>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/aiometadata.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/aiometadata.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Requires>
+        Redis is required. Point REDIS_URL at your Redis instance (e.g. redis://container-name:6379 on a custom network, or redis://your-server-ip:6379). &#xD;
+        Set HOST_NAME to the public URL Stremio will use (HTTPS via reverse proxy is typical). &#xD;
+        After the container is up, open /configure to set TMDB and other API keys, providers, and security options. &#xD;
+        Optional env overrides (TMDB_API, LOG_LEVEL, OAuth redirects, cache tuning, etc.) are documented here: https://github.com/cedya77/aiometadata/blob/dev/docs/ENVIRONMENT_VARIABLES.md — add them via &quot;Add another Path, Port, Variable, Label or Device&quot; if you need them. &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="3232" Default="3232" Mode="tcp" Description="Host port mapped to the addon (container listens on 3232)." Type="Port" Display="always" Required="true" Mask="false">3232</Config>
+    <Config Name="Data Folder" Target="/app/addon/data" Default="" Mode="rw" Description="Persistent addon data (SQLite DB when using default DATABASE_URI)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/aiometadata/data</Config>
+    <Config Name="Host Name" Target="HOST_NAME" Default="" Mode="" Description="Public URL where the addon is reachable (include https://). Used for manifest and resource URLs." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="Database URI" Target="DATABASE_URI" Default="sqlite://addon/data/db.sqlite" Mode="" Description="SQLite default matches the Data Folder mount. Use postgresql://... for Postgres." Type="Variable" Display="always" Required="true" Mask="false">sqlite://addon/data/db.sqlite</Config>
+    <Config Name="Redis URL" Target="REDIS_URL" Default="redis://redis:6379" Mode="" Description="Redis URL for caching. Change host if your Redis container is not named redis." Type="Variable" Display="always" Required="true" Mask="false">redis://redis:6379</Config>
+</Container>
