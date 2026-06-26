@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>CrossWatch</Name>
+    <Repository>ghcr.io/cenodude/crosswatch:latest</Repository>
+    <Registry>https://github.com/cenodude/CrossWatch/pkgs/container/crosswatch</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/cenodude/CrossWatch/issues</Support>
+    <Project>https://github.com/cenodude/CrossWatch</Project>
+    <Overview>CrossWatch synchronizes watchlists, ratings, history, and progress across Plex, Jellyfin, Emby, Trakt, SIMKL, AniList, TMDb, MDBList, and more. Link accounts, define sync pairs, and manage everything from the built-in web UI.</Overview>
+    <Category>MediaApp:Video Tools: Management Status:Stable</Category>
+    <WebUI>http://[IP]:[PORT:8787]</WebUI>
+    <Icon>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/master/logos/crosswatch.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/JamsRepos/Unraid-Templates/main/templates/crosswatch.xml</TemplateURL>
+    <Maintainer>
+        <WebPage>https://github.com/JamsRepos</WebPage>
+    </Maintainer>
+    <Requires>
+        After first start, open the web UI to link media servers and trackers, create profiles, and configure sync pairs. &#xD;
+        Documentation: https://wiki.crosswatch.app &#xD;
+    </Requires>
+    <Config Name="Web UI Port" Target="8787" Default="8787" Mode="tcp" Description="Host port mapped to the CrossWatch web UI (container listens on 8787)." Type="Port" Display="always" Required="true" Mask="false">8787</Config>
+    <Config Name="Config Folder" Target="/config" Default="" Mode="rw" Description="Persistent configuration, state, and backups." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/crosswatch</Config>
+    <Config Name="Timezone" Target="TZ" Default="UTC" Mode="" Description="Container timezone for logs and scheduled sync tasks." Type="Variable" Display="always" Required="false" Mask="false">UTC</Config>
+</Container>
