@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>Streamystats - AIO</Name>
-    <Repository>fredrikburmester/streamystats-v2-aio:latest</Repository>
-    <Registry>https://github.com/fredrikburmester/streamystats</Registry>
+    <Repository>ghcr.io/fredrikburmester/streamystats-aio:latest</Repository>
+    <Registry>https://github.com/fredrikburmester/streamystats/pkgs/container/streamystats-aio</Registry>
     <Network>host</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
